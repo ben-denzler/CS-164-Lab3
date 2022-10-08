@@ -57,6 +57,7 @@ int main(int argc, char * argv[]) {
     // Set last byte to 0
     recvBuff[n] = 0;
     // Output the contents of the recvBuff
+    printf("Server's message: ");
     if (fputs(recvBuff, stdout) == EOF) {
       printf("\n Error : Fputs error");
     }
