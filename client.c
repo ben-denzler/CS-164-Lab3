@@ -10,7 +10,6 @@
 #include <arpa/inet.h>
  
 int main(int argc, char * argv[]) {
-  printf("Nothing!");
   int sockfd = 0, n = 0;
   char recvBuff[1024];
   char * hi = "Hi!";
@@ -43,7 +42,7 @@ int main(int argc, char * argv[]) {
 
   // Try to connect to socket
   if (connect(sockfd, (struct sockaddr * ) & serv_addr, sizeof(serv_addr)) < 0) {
-    printf("\n Error : Boop \n");
+    printf("\n Error : Connect Failed \n");
     return 1;
   }
 
