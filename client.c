@@ -36,7 +36,7 @@ int main(int argc, char * argv[]) {
     printf("%s", hi);
   } else if (argc == 2 && *argv[1] == '2') {
     printf("%s", bye);
-  } else if (argc != 2) {
+  } else {
 	  printf("Nothing!");
   }
 
