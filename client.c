@@ -10,6 +10,7 @@
 #include <arpa/inet.h>
  
 int main(int argc, char * argv[]) {
+  printf("Nothing!");
   int sockfd = 0, n = 0;
   char recvBuff[1024];
   char * hi = "Hi!";
@@ -32,8 +33,6 @@ int main(int argc, char * argv[]) {
   serv_addr.sin_port = htons(5000); // Port number
   serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // IP address
 
-  printf("Nothing!");
-  
   if (argc == 2 && *argv[1] == '1') {
     printf("%s", hi);
   } else if (argc == 2 && *argv[1] == '2') {
