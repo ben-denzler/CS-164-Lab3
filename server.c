@@ -47,7 +47,7 @@ int main(void) {
     // Read incoming message from client
     clientMsg = read(listenfd, recvBuff, 1024);
 
-    printf("%s", clientMsg);
+    printf("%s", recvBuff);
 
     // Copy message to sendBuff
     strcpy(sendBuff, "Message from server33");
