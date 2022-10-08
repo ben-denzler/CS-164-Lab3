@@ -49,7 +49,7 @@ int main(void) {
 
     if (clientMsg > 0) {
       printf("Client's message: %s\n", recvBuff);
-      printf("Sending message back to them..."\n);
+      printf("Sending message back to them...\n");
       strcpy(sendBuff, recvBuff);
       write(connfd, sendBuff, strlen(sendBuff));
     }
