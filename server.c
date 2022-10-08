@@ -20,7 +20,7 @@ int main(void) {
 
   // Set listenfd as our socket
   listenfd = socket(AF_INET, SOCK_STREAM, 0);
-  printf("socket retrieve success\n");
+  printf("Socket created successfully.\n");
 
   // Clear the socket info and send buffer so we don't send null
   memset( & serv_addr, '0', sizeof(serv_addr));
@@ -36,7 +36,7 @@ int main(void) {
 
   // Start listening to the socket
   if (listen(listenfd, 10) == -1) {
-    printf("Failed to listen\n");
+    printf("Failed to listen to socket.\n");
     return -1;
   }
 
