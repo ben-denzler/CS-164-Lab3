@@ -47,14 +47,16 @@ int main(void) {
     // Read incoming message from client
     clientMsg = read(connfd, recvBuff, sizeof(recvBuff) - 1);
 
-    printf("Size of client msg: %d\n", clientMsg);
-    printf("%s\n", recvBuff);
-
-    // Copy message to sendBuff
-    strcpy(sendBuff, "Message from server33");
-
-    // Send message in sendBuff over socket connfd to client
-    write(connfd, sendBuff, strlen(sendBuff));
+    if (clientMsg > 0) {
+      printf("Size of client msg: %d\n", clientMsg);
+      printf("%s\n", recvBuff);
+    }
+    else {
+      // Copy message to sendBuff
+      strcpy(sendBuff, "Message from server33");
+      // Send message in sendBuff over socket connfd to client
+      write(connfd, sendBuff, strlen(sendBuff));
+    }
 
     // Close the connection
     close(connfd);

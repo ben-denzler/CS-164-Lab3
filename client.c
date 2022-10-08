@@ -40,13 +40,18 @@ int main(int argc, char * argv[]) {
     printf("Socket connected successfully.\n");
   }
 
+  // Send "Hi!"
   if (argc == 2 && *argv[1] == '1') {
     send(sockfd, hi, strlen(hi), 0);
     printf("\"Hi!\" was sent to the server.\n");
-  } else if (argc == 2 && *argv[1] == '2') {
+  } 
+  // Send "Bye!"
+  else if (argc == 2 && *argv[1] == '2') {
     send(sockfd, bye, strlen(bye), 0);
     printf("\"Bye!\" was sent to the server.\n");
-  } else {
+  }
+  // Listen for server's message
+  else {
     while ((n = read(sockfd, recvBuff, sizeof(recvBuff) - 1)) > 0) {
       // Set last byte to 0
       recvBuff[n] = 0;
