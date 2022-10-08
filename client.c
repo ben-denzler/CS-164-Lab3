@@ -40,30 +40,32 @@ int main(int argc, char * argv[]) {
     printf("Socket connected successfully.\n");
   }
 
-  // Send "Hi!"
   if (argc == 2 && *argv[1] == '1') {
     send(sockfd, hi, strlen(hi), 0);
     printf("\"Hi!\" was sent to the server.\n");
   } 
-  // Send "Bye!"
   else if (argc == 2 && *argv[1] == '2') {
     send(sockfd, bye, strlen(bye), 0);
     printf("\"Bye!\" was sent to the server.\n");
   }
-  // Listen for server's message
   else {
-    while ((n = read(sockfd, recvBuff, sizeof(recvBuff) - 1)) > 0) {
-      // Set last byte to 0
-      recvBuff[n] = 0;
-      // Output the contents of the recvBuff
-      if (fputs(recvBuff, stdout) == EOF) {
-        printf("\n Error : Fputs error");
-      }
-      printf("\n");
+    printf("No message was sent to the server.\n");
+  }
+
+  // Read server's message
+  while ((n = read(sockfd, recvBuff, sizeof(recvBuff) - 1)) > 0) {
+    // Set last byte to 0
+    recvBuff[n] = 0;
+    // Output the contents of the recvBuff
+    printf("Server's message: ");
+    if (fputs(recvBuff, stdout) == EOF) {
+      printf("\n Error : Fputs error");
     }
-    if (n < 0) {
-      printf("\n Read Error \n");
-    }
+    printf("\n");
+  }
+
+  if (n < 0) {
+    printf("\n Read Error \n");
   }
 
   return 0;

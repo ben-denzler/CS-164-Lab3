@@ -48,8 +48,10 @@ int main(void) {
     clientMsg = read(connfd, recvBuff, sizeof(recvBuff) - 1);
 
     if (clientMsg > 0) {
-      printf("Size of client msg: %d\n", clientMsg);
-      printf("%s\n", recvBuff);
+      printf("Client's message: %s\n", recvBuff);
+      printf("Sending message back to them..."\n);
+      strcpy(sendBuff, recvBuff);
+      write(connfd, sendBuff, strlen(sendBuff));
     }
     else {
       // Copy message to sendBuff
