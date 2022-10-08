@@ -14,9 +14,19 @@ int main(int argc, char * argv[]) {
   char recvBuff[1024];
   char* hi = "Hi!";
   char* bye = "Bye!";
+  char* hostname = "server.ben.cs164";
 
   // Info that the socket will be bound to
   struct sockaddr_in serv_addr;
+
+  struct hostent* H;
+  struct in_addr** AddrList;
+  if ((H = gethostbyname(hostname)) == NULL) {
+    printf("Error calling gethostbyname(), exiting...");
+    return 1;
+  }
+
+  AddrList = (struct in_addr **) H->h_addr_list;
 
   // Set receive buffer to all 0s
   memset(recvBuff, '0', sizeof(recvBuff));
