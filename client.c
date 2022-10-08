@@ -14,7 +14,11 @@ int main(int argc, char * argv[]) {
   char recvBuff[1024];
   char* hi = "Hi!";
   char* bye = "Bye!";
-  char* hostname = "server.ben.cs164";
+  char* hostname;
+
+  if (argc == 3) {
+    hostname = argv[2];
+  }
 
   // Info that the socket will be bound to
   struct sockaddr_in serv_addr;
@@ -22,7 +26,7 @@ int main(int argc, char * argv[]) {
   struct hostent* H;
   struct in_addr** AddrList;
   if ((H = gethostbyname(hostname)) == NULL) {
-    printf("Error calling gethostbyname(), exiting...");
+    printf("Error calling gethostbyname(), exiting...\n");
     return 1;
   }
 
@@ -50,11 +54,11 @@ int main(int argc, char * argv[]) {
     printf("Socket connected successfully.\n");
   }
 
-  if (argc == 2 && *argv[1] == '1') {
+  if (argc >= 2 && *argv[1] == '1') {
     send(sockfd, hi, strlen(hi), 0);
     printf("\"Hi!\" was sent to the server.\n");
   } 
-  else if (argc == 2 && *argv[1] == '2') {
+  else if (argc >= 2 && *argv[1] == '2') {
     send(sockfd, bye, strlen(bye), 0);
     printf("\"Bye!\" was sent to the server.\n");
   }
