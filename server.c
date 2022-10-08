@@ -15,6 +15,7 @@ int main(void) {
   struct sockaddr_in serv_addr;
 
   char sendBuff[1025];
+  char recvBuff[1025];
   int numrv;
 
   // Set listenfd as our socket
@@ -42,6 +43,11 @@ int main(void) {
   while (1) {
     // Accept any requests from the client, creating new socket connfd
     connfd = accept(listenfd, (struct sockaddr * ) NULL, NULL);
+
+    // Read incoming message from client
+    clientMsg = read(listenfd, recvBuff, 1024);
+
+    printf("%s", clientMsg);
 
     // Copy message to sendBuff
     strcpy(sendBuff, "Message from server33");
