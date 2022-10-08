@@ -47,6 +47,7 @@ int main(void) {
     // // Read incoming message from client
     clientMsg = read(listenfd, recvBuff, 1024);
 
+    printf("Size of client msg: %d\n", clientMsg);
     printf("%s\n", recvBuff);
 
     // Copy message to sendBuff
