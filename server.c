@@ -45,7 +45,7 @@ int main(void) {
     connfd = accept(listenfd, (struct sockaddr * ) NULL, NULL);
 
     // // Read incoming message from client
-    clientMsg = read(listenfd, recvBuff, 1024);
+    clientMsg = read(listenfd, recvBuff, sizeof(recvBuff) - 1);
 
     printf("Size of client msg: %d\n", clientMsg);
     printf("%s\n", recvBuff);
