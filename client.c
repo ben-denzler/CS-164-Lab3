@@ -20,7 +20,7 @@ int main(int argc, char * argv[]) {
 
   if (argc == 3) {
     hostname = argv[2];
-    printf("Grabbed hostname from command-line argument.\n")
+    printf("Grabbed hostname from command-line argument.\n");
   }
 
   // Info that the socket will be bound to
