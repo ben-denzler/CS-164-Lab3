@@ -14,8 +14,8 @@ int main(void) {
   // Info that the socket will be bound to
   struct sockaddr_in serv_addr;
 
-  char sendBuff[1025];
-  char recvBuff[1025];
+  char sendBuff[1024];
+  char recvBuff[1024];
   int numrv;
 
   // Set listenfd as our socket
@@ -45,7 +45,7 @@ int main(void) {
     connfd = accept(listenfd, (struct sockaddr * ) NULL, NULL);
 
     // Read incoming message from client
-    clientMsg = read(connfd, recvBuff, 1024);
+    clientMsg = read(listenfd, recvBuff, 1024);
 
     printf("%s", recvBuff);
 
