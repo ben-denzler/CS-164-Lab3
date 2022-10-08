@@ -38,10 +38,10 @@ int main(int argc, char * argv[]) {
     return 1;
   }
 
-  if (argc == 2 && argv[1] == 1) {
-    printf( % s, hi);
-  } else if (argc == 2 && argv[1] == 2) {
-    printf( % s, bye);
+  if (argc == 2 && *argv[1] == '1') {
+    printf( %s, hi);
+  } else if (argc == 2 && *argv[1] == '2') {
+    printf( %s, bye);
   } else {
 	printf("Nothing!");
   }
