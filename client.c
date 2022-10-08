@@ -16,7 +16,7 @@ int main(int argc, char * argv[]) {
   char* bye = "Bye!";
   char* hostname;
 
-  printf("%d", argc);
+  printf("Command-line arguments: %d\n", argc);
 
   if (argc == 3) {
     hostname = argv[2];
@@ -31,6 +31,9 @@ int main(int argc, char * argv[]) {
   if ((H = gethostbyname(hostname)) == NULL) {
     printf("Error calling gethostbyname(), exiting...\n");
     return 1;
+  }
+  else {
+    printf("Successfully found host.\n");
   }
 
   AddrList = (struct in_addr **) H->h_addr_list;
