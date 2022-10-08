@@ -16,7 +16,7 @@ int main(int argc, char * argv[]) {
   char* bye = "Bye!";
   char* hostname;
 
-  printf(argc);
+  printf("%d", argc);
 
   if (argc == 3) {
     hostname = argv[2];
