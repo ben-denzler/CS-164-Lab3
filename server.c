@@ -46,6 +46,7 @@ int main(void) {
 
     // Read incoming message from client
     clientMsg = read(connfd, recvBuff, sizeof(recvBuff) - 1);
+    printf("Sending default message to client...\n");
 
     if (clientMsg > 0) {
       printf("Client's message: %s\n", recvBuff);
@@ -54,7 +55,6 @@ int main(void) {
       write(connfd, sendBuff, strlen(sendBuff));
     }
     else {
-      printf("Sending default message to client...\n");
       // Copy message to sendBuff
       strcpy(sendBuff, "Message from server33");
       // Send message in sendBuff over socket connfd to client
