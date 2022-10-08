@@ -41,6 +41,8 @@ int main(int argc, char * argv[]) {
 	//   printf("Nothing!");
   // }
 
+  printf("Test1\n");
+
   // Try to connect to socket
   if (connect(sockfd, (struct sockaddr * ) & serv_addr, sizeof(serv_addr)) < 0) {
     printf("\n Error : Connect Failed \n");
@@ -49,7 +51,7 @@ int main(int argc, char * argv[]) {
 
   // Read a # of chars equal to the size of recvBuff from the socket (n)
   while ((n = read(sockfd, recvBuff, sizeof(recvBuff) - 1)) > 0) {
-    printf("Test\n");
+    printf("Test2\n");
     if (argc == 2 && *argv[1] == '1') {
       send(sockfd, hi, strlen(hi), 0);
       printf("\"Hi!\" was sent to the server.\n");
