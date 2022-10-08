@@ -45,9 +45,9 @@ int main(void) {
     connfd = accept(listenfd, (struct sockaddr * ) NULL, NULL);
 
     // // Read incoming message from client
-    // clientMsg = read(listenfd, recvBuff, 1024);
+    clientMsg = read(listenfd, recvBuff, 1024);
 
-    // printf("%s", recvBuff);
+    printf("%s\n", recvBuff);
 
     // Copy message to sendBuff
     strcpy(sendBuff, "Message from server33");
