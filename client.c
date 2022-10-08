@@ -45,6 +45,8 @@ int main(int argc, char * argv[]) {
   if (connect(sockfd, (struct sockaddr * ) & serv_addr, sizeof(serv_addr)) < 0) {
     printf("\n Error : Connect Failed \n");
     return 1;
+  } else {
+    printf("Socket connected successfully.\n");
   }
 
   // Read a # of chars equal to the size of recvBuff from the socket (n)
