@@ -9,7 +9,7 @@
 #include <sys/types.h>
  
 int main(void) {
-  int listenfd = 0, connfd = 0;
+  int listenfd = 0, connfd = 0, clientMsg = 0;
 
   // Info that the socket will be bound to
   struct sockaddr_in serv_addr;
