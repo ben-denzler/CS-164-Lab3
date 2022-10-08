@@ -54,6 +54,7 @@ int main(void) {
       write(connfd, sendBuff, strlen(sendBuff));
     }
     else {
+      printf("Sending default message to client...\n");
       // Copy message to sendBuff
       strcpy(sendBuff, "Message from server33");
       // Send message in sendBuff over socket connfd to client
