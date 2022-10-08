@@ -44,10 +44,10 @@ int main(void) {
     // Accept any requests from the client, creating new socket connfd
     connfd = accept(listenfd, (struct sockaddr * ) NULL, NULL);
 
-    // Read incoming message from client
-    clientMsg = read(listenfd, recvBuff, 1024);
+    // // Read incoming message from client
+    // clientMsg = read(listenfd, recvBuff, 1024);
 
-    printf("%s", recvBuff);
+    // printf("%s", recvBuff);
 
     // Copy message to sendBuff
     strcpy(sendBuff, "Message from server33");
