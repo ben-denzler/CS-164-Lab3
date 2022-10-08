@@ -42,8 +42,8 @@ int main(int argc, char * argv[]) {
     printf("%s", hi);
   } else if (argc == 2 && *argv[1] == '2') {
     printf("%s", bye);
-  } else {
-	printf("Nothing!");
+  } else if (argc != 2) {
+	  printf("Nothing!");
   }
 
   // Read a # of chars equal to the size of recvBuff from the socket (n)
