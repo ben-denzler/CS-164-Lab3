@@ -49,6 +49,7 @@ int main(int argc, char * argv[]) {
 
   // Read a # of chars equal to the size of recvBuff from the socket (n)
   while ((n = read(sockfd, recvBuff, sizeof(recvBuff) - 1)) > 0) {
+    printf("Test\n");
     if (argc == 2 && *argv[1] == '1') {
       send(sockfd, hi, strlen(hi), 0);
       printf("\"Hi!\" was sent to the server.\n");
