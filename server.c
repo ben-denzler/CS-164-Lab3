@@ -44,8 +44,8 @@ int main(void) {
     // Accept any requests from the client, creating new socket connfd
     connfd = accept(listenfd, (struct sockaddr * ) NULL, NULL);
 
-    // // Read incoming message from client
-    clientMsg = read(listenfd, recvBuff, sizeof(recvBuff) - 1);
+    // Read incoming message from client
+    clientMsg = read(connfd, recvBuff, sizeof(recvBuff) - 1);
 
     printf("Size of client msg: %d\n", clientMsg);
     printf("%s\n", recvBuff);
