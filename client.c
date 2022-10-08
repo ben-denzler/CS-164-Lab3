@@ -16,6 +16,8 @@ int main(int argc, char * argv[]) {
   char* bye = "Bye!";
   char* hostname;
 
+  printf(argc);
+
   if (argc == 3) {
     hostname = argv[2];
     printf("Grabbed hostname from command-line argument.\n")
