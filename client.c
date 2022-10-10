@@ -50,7 +50,7 @@ int main(int argc, char * argv[]) {
   // Set port etc. for the socket
   serv_addr.sin_family = AF_INET; // Address family
   serv_addr.sin_port = htons(5000); // Port number
-  serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // IP address
+  serv_addr.sin_addr.s_addr = AddrList[0]->s_addr; // IP address
 
   // Try to connect to socket
   if (connect(sockfd, (struct sockaddr * ) & serv_addr, sizeof(serv_addr)) < 0) {
